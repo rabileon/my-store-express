@@ -31,8 +31,6 @@ coverage
 
 # Bower dependency directory (https://bower.io/)
 bower_components
-postgres_data
-mysql_data
 
 # node-waf configuration
 .lock-wscript
@@ -43,6 +41,8 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+postgres_data
+mysql_data
 
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
