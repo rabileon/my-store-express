@@ -1,5 +1,4 @@
 const boom = require('@hapi/boom');
-const { use } = require('../routes/users.router');
 
 const { models } = require('./../libs/sequelize');
 
@@ -15,7 +14,6 @@ class UserService {
     const rta = await models.User.findAll({
       include: ['customer'],
     });
-
     return rta;
   }
 
@@ -29,15 +27,14 @@ class UserService {
 
   async update(id, changes) {
     const user = await this.findOne(id);
-
-    const rta = user.update(changes);
+    const rta = await user.update(changes);
     return rta;
   }
 
   async delete(id) {
     const user = await this.findOne(id);
     await user.destroy();
-    return id;
+    return { id };
   }
 }
 
