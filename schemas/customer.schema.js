@@ -34,4 +34,3 @@ module.exports = {
   createCustomerSchema,
   updateCustomerSchema,
 };
-s;
