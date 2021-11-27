@@ -12,7 +12,6 @@ const LocalStrategy = new Strategy(
   },
   async (email, password, done) => {
     try {
-      console.log('adjakl');
       const user = await service.findByEmail(email);
       if (!user) {
         done(boom.unauthorized(), false);
