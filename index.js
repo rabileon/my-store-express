@@ -28,6 +28,8 @@ const options = {
 };
 app.use(cors(options));
 
+require('./utils/auth');
+
 app.get('/nueva-ruta', checkApiKey, (req, res) => {
   res.send('Hola, soy una nueva ruta');
 });
@@ -40,6 +42,8 @@ app.get('/categories/:categoryId/products/:productId', (req, res) => {
   });
 });
 
+const passport = require('passport');
+app.use(passport.initialize());
 routerApi(app);
 
 app.use(logErrors);
